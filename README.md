@@ -72,7 +72,3 @@ docs/
 ```bash
 .venv/bin/pytest -q
 ```
-
-## License
-
-MIT
