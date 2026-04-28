@@ -17,6 +17,7 @@ class JobQueue:
         
 
     async def enqueue(self, job: Job) -> None:
+        job.status = JobStatus.PENDING
         async with self._lock:
             heappush(self._queue, (job.scheduled_for, job.job_id, job))
             self._job_index[job.job_id] = job
